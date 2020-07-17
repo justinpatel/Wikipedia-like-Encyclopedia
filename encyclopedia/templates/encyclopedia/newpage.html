@@ -1,0 +1,14 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Create a new entry
+{% endblock %}
+
+{% block body %}
+    <h1>Create a new entry</h1>
+    <form action="{% url 'ency:newpage' %}" method="POST" class="col-lg-10 col-md-9">
+        {% csrf_token %}
+        {{ form|safe }}
+        <input type="submit">
+    </form>
+{% endblock %}
